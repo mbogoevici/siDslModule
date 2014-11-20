@@ -30,16 +30,6 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>4.1.1.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.1.1.RELEASE</version>
-		</dependency>
 		<!-- Spring XD Dependencies needed for module development -->
 		<dependency>
 			<groupId>org.springframework.xd</groupId>
@@ -75,7 +65,7 @@
 			<groupId>org.springframework.xd</groupId>
 			<artifactId>spring-xd-test</artifactId>
 			<version>${spring.xd.version}</version>
-			<scope>provide</scope>
+			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.data</groupId>
@@ -89,13 +79,23 @@
 			<groupId>org.springframework.integration</groupId>
 			<artifactId>spring-integration-java-dsl</artifactId>
 			<version>1.0.0.RC1</version>
-			<!--<exclusions>-->
-				<!--<exclusion>-->
-					<!--<groupId>*</groupId>-->
-					<!--<artifactId>*</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
-		</dependency>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		 </dependency>
+		 <!--<dependency>-->
+			 <!--<groupId>org.springframework</groupId>-->
+			 <!--<artifactId>spring-messaging</artifactId>-->
+			 <!--<version>4.1.2.RELEASE</version>-->
+		 <!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-expression</artifactId>-->
+			<!--<version>4.1.2.RELEASE</version>-->
+		<!--</dependency>-->
 	</dependencies>
 	<repositories>
 		<repository>
@@ -114,4 +114,15 @@
 			<url>http://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 </project>
