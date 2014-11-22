@@ -15,6 +15,8 @@
  */
 package com.acme;
 
+import static org.springframework.util.ObjectUtils.nullSafeEquals;
+
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 
@@ -73,7 +75,7 @@ public class ExampleModuleOptionsMetadata implements ProfileNamesProvider {
 	}
 
 	@AssertTrue(message = "prefix and suffix cannot be the same")
-	boolean getPrefixAndSuffixCannotBeTheSame() {
-		return (!prefix.equals(suffix));
+	public boolean getPrefixAndSuffixCannotBeTheSame() {
+		return (!nullSafeEquals(prefix, suffix));
 	}
 }
